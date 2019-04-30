@@ -1,0 +1,48 @@
+#linebreaks 80
+#bytecells
+#echo
+#table board 64
+#dim input startx starty endx endy turn state isrunning fply sply
+
+uneq playing 0
+ifeq state 0
+msg  __________________________
+line
+msg |**************************|
+line
+msg |welcome to chess for socos|
+line
+msg |**************************|
+line
+msg | 1. ply vs ply            |
+line
+msg | 2. ply vs cmp            |
+line
+msg | 3. cmp vs cmp            |
+line
+msg |__________________________|
+line
+beep
+msg :
+space
+read input
+
+ifeq input 1
+set fply 1
+set sply 1
+set state 1
+end
+
+ifeq input 2
+set fply 1
+set sply 0
+set state 1
+	end
+
+		ifeq input 3
+			set fply 0
+			set sply 0
+			set state 1
+		end
+	end
+end
